@@ -18,7 +18,5 @@ colorama
 
 gevent
 
-gunicorn
-
 
 git+https://github.com/Damianonymous/mfcauto.py@master
