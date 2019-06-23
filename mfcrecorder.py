@@ -5,6 +5,7 @@ import sys
 import threading
 import mfcauto
 import classes
+import webapp
 
 if __name__ == '__main__':
     webapp.app.run(host='0.0.0.0', debug=True)
@@ -13,7 +14,7 @@ if __name__ == '__main__':
     if config.settings.post_processing_command:
         classes.postprocessing.init_workers(config.settings.post_processing_thread_count)
     if config.settings.web_enabled:
-        import webapp
+       
         webapp.views.init_data(config)
         threading.Thread(
             target=webapp.app.run,
