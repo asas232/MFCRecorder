@@ -13,12 +13,12 @@ if __name__ == '__main__':
     if config.settings.post_processing_command:
         classes.postprocessing.init_workers(config.settings.post_processing_thread_count)
     if config.settings.web_enabled:
-       
         webapp.views.init_data(config)
-        threading.Thread(
-            target=webapp.app.run,
-            kwargs={'host':'0.0.0.0', 'port':config.settings.port, 'threaded':'True', 'ssl_context':('certs/snakeoil.cert', 'certs/snakeoil.key')}
-        ).start()
+        webapp.run(host='0.0.0.0')
+#         threading.Thread(
+#             target=webapp.app.run,
+#             kwargs={'host':'0.0.0.0', 'port':config.settings.port, 'threaded':'True', 'ssl_context':('certs/snakeoil.cert', 'certs/snakeoil.key')}
+#         ).start()
 
     next_run = datetime.datetime.now()
     while True:
