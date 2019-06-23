@@ -1,2 +1,2 @@
-# web: gunicorn -b :$PORT mfcrecorder.py
-web:  bin/start-nginx python mfcrecorder.py
+# web:  bin/start-nginx gunicorn -b :$PORT mfcrecorder:app
+# web:  bin/start-nginx python mfcrecorder.py
