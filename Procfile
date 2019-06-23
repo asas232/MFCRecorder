@@ -1,1 +1,1 @@
-web: python mfcrecorder.py
+web: gunicorn -b :$PORT mfcrecorder.py
