@@ -5,6 +5,10 @@ import sys
 import threading
 import mfcauto
 import classes
+from flask import Flask
+
+
+app = Flask(__name__)
 
 if __name__ == '__main__':
     config = classes.config.Config(os.path.join(sys.path[0], 'config.conf'))
