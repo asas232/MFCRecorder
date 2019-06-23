@@ -1,1 +1,1 @@
-web: mfcrecorder.py
+web: python mfcrecorder.py
