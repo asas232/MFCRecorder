@@ -5,13 +5,9 @@ import sys
 import threading
 import mfcauto
 import classes
-from flask import Flask
-
-
-app = Flask(__name__)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+    webapp.app.run(host='0.0.0.0', debug=True)
     config = classes.config.Config(os.path.join(sys.path[0], 'config.conf'))
     #when config is edited at runtime and postprocessing is added, we cannot start it
     if config.settings.post_processing_command:
