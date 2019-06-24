@@ -23,17 +23,17 @@ if __name__ == 'mfcrecorder':
 #             kwargs={'host':'0.0.0.0', 'port':config.settings.port, 'threaded':'True', 'ssl_context':('certs/snakeoil.cert', 'certs/snakeoil.key')}
 #         ).start()
 
-#     next_run = datetime.datetime.now()
-#     while True:
-#         if datetime.datetime.now() < next_run:
-#             time.sleep(0.1)
-#             continue
-#         print("another run {}".format(datetime.datetime.now()))
-#         next_run += datetime.timedelta(seconds=config.settings.interval)
-#         config.refresh()
-#         for uid, model in classes.models.get_online_models().items():
-#             if not config.does_model_pass_filter(model):
-#                 continue
-#             classes.recording.start_recording(model.session, config)
-#             print("recording {}: {} ({} viewers) [{}]".format(model.name, model.session['uid'], model.session['rc'], model.tags))
-#         print('finished run')
+    next_run = datetime.datetime.now()
+    while True:
+        if datetime.datetime.now() < next_run:
+            time.sleep(0.1)
+            continue
+        print("another run {}".format(datetime.datetime.now()))
+        next_run += datetime.timedelta(seconds=config.settings.interval)
+        config.refresh()
+        for uid, model in classes.models.get_online_models().items():
+            if not config.does_model_pass_filter(model):
+                continue
+            classes.recording.start_recording(model.session, config)
+            print("recording {}: {} ({} viewers) [{}]".format(model.name, model.session['uid'], model.session['rc'], model.tags))
+        print('finished run')
