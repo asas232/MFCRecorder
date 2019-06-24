@@ -9,7 +9,7 @@ import webapp
 
 app=webapp.app;
 
-def modelLoop(self,config):  
+def modelLoop(config):  
     next_run = datetime.datetime.now()
     while True:
         if datetime.datetime.now() < next_run:
@@ -41,7 +41,7 @@ if __name__ == 'mfcrecorder':
 #         ).start()
     threading.Thread(
           target=modelLoop,
-          args=[self,config]
+          args=[config]
       ).start()
 
   
