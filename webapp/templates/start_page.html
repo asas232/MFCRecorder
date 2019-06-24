@@ -30,7 +30,8 @@
                         ({{ session['rc'] }})
                     </div>
                     <div>{{ condition_text(session['condition'], session.get('condition-text')) }}</div>
-                    <img class="img-responsive" alt="{{ session['nm'] }} thumbnail" src="{{ url_for('thumbnail', uid=uid) }}" />
+<!--                     <img class="img-responsive" alt="{{ session['nm'] }} thumbnail" src="{{ url_for('thumbnail', uid=uid) }}" /> -->
+                      <img class="img-responsive" alt="{{ session['nm'] }} thumbnail" src="{{ url_for('thumbnail', uid=uid) }}_1" /> 
                     <div>
                         {% if not is_wanted %}
                             <a title="add to wanted list" href="{{ url_for('add') }}?uid_or_name={{ uid }}">add</a> |
