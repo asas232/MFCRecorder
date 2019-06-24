@@ -1,6 +1,7 @@
 from webapp import app
 import flask
 import classes
+import os
 
 def init_data(config):
     global CONFIG
@@ -127,5 +128,5 @@ def thumbnail(uid):
 
 @app.route('/manage')
 def manage_file():
-    files_list = os.listdir("./captures")
+    files_list = os.listdir("/app/captures")
     return render_template('manage.html', files_list=files_list)
