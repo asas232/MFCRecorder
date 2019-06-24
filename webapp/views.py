@@ -133,7 +133,8 @@ def manage_file():
     list = [] 
     for name in files_list
         size = os.stat("/app/captures"+name).st_size
-        list.append({"name":name,"size":size})
+        sizeStr = getSizeInNiceString(size)
+        list.append({"name":name,"size":sizeStr})
     
     return render_template('manage.html', files_list=list)
 
@@ -141,3 +142,20 @@ def manage_file():
 def download(filename):
     # fname = filename.encode('cp936')
     return send_from_directory(directory="/app/captures", filename=filename,as_attachment=True)
+
+def getSizeInNiceString(sizeInBytes):
+    """
+    Convert the given byteCount into a string like: 9.9bytes/KB/MB/GB
+    """
+    for (cutoff, label) in [(1024*1024*1024, "GB"),
+                            (1024*1024, "MB"),
+                            (1024, "KB"),
+                            ]:
+        if sizeInBytes >= cutoff:
+            return "%.1f %s" % (sizeInBytes * 1.0 / cutoff, label)
+
+    if sizeInBytes == 1:
+        return "1 byte"
+    else:
+        bytes = "%.1f" % (sizeInBytes or 0,)
+        return (bytes[:-2] if bytes.endswith('.0') else bytes) + ' bytes'
