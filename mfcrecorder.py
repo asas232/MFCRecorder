@@ -28,7 +28,6 @@ def modelLoop(config):
 if __name__ == 'mfcrecorder':
     #print("path-{}".format(sys.path[0]))
     config = classes.config.Config('./config.conf')
-    print("xcx--{}".format(config))
     #when config is edited at runtime and postprocessing is added, we cannot start it
     if config.settings.post_processing_command:
         classes.postprocessing.init_workers(config.settings.post_processing_thread_count)
