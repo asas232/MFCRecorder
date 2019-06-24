@@ -132,7 +132,7 @@ def manage_file():
     files_list = os.listdir("/app/captures")
     list = [] 
     for name in files_list:
-        size = os.stat("/app/captures"+name).st_size
+        size = os.stat("/app/captures/"+name).st_size
         sizeStr = getSizeInNiceString(size)
         list.append({"name":name,"size":sizeStr})
     
