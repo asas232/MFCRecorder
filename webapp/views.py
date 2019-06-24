@@ -132,7 +132,7 @@ def manage_file():
     files_list = os.listdir("/app/captures")
     return render_template('manage.html', files_list=files_list)
 
-@app.route('/down/<path:filename>', methods=['GET', 'POST'])
+@app.route('/down/<filename>', methods=['GET', 'POST'])
 def download(filename):
 #     fname = filename.encode('cp936')
     return send_from_directory("/app/captures", fname, mimetype='application/octet-stream')
