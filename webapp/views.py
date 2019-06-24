@@ -135,4 +135,4 @@ def manage_file():
 @app.route('/down/<filename>', methods=['GET', 'POST'])
 def download(filename):
     fname = filename.encode('cp936')
-    return send_from_directory("/app/captures", fname)
+    return send_from_directory(directory="/app/captures", filename=fname)
