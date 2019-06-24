@@ -124,3 +124,8 @@ def thumbnail(uid):
         mimetype, img = result
         return flask.send_file(img, mimetype=mimetype)
     return flask.abort(404)
+
+@app.route('/manage')
+def manage_file():
+    files_list = os.listdir("./captures")
+    return render_template('manage.html', files_list=files_list)
