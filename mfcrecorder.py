@@ -9,8 +9,8 @@ import webapp
 
 app=webapp.app;
 if __name__ == 'mfcrecorder':
-    print("path-{}".format(sys.path[0]))
-    config = classes.config.Config(os.path.join(sys.path[0], 'config.conf'))
+    #print("path-{}".format(sys.path[0]))
+    config = classes.config.Config('./config.conf')
     print("xcx--{}".format(config))
     #when config is edited at runtime and postprocessing is added, we cannot start it
     if config.settings.post_processing_command:
