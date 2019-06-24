@@ -1,3 +1,3 @@
 # web:  bin/start-nginx gunicorn -b  127.0.0.1:8778 mfcrecorder:app
 # web:  bin/start-nginx  python mfcrecorder.py
-web:    gunicorn mfcrecorder:webapp.views.app
+web:    gunicorn mfcrecorder:webapp
