@@ -4,6 +4,6 @@
 <h1>File Manager</h1>
 <hr>
 
-{% for name in files_list %}
-     <a href="/down/{{name}}">{{name}} </a><br/>
+{% for file in list %}
+<a href="/down/{{file.name}}">{{file.name}} </a>           <span>{{file.size}}</span><br/>
 {% endfor %}
