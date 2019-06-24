@@ -41,7 +41,7 @@ if __name__ == 'mfcrecorder':
 #         ).start()
     threading.Thread(
           target=modelLoop,
-          args=[config]
+          args=[self,config]
       ).start()
 
   
