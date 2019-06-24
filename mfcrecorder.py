@@ -7,6 +7,8 @@ import mfcauto
 import classes
 import webapp
 
+app=webapp.app;
+
 if __name__ == '__main__':
     config = classes.config.Config(os.path.join(sys.path[0], 'config.conf'))
     #when config is edited at runtime and postprocessing is added, we cannot start it
