@@ -22,8 +22,15 @@ if __name__ == 'mfcrecorder':
 #             target=webapp.app.run,
 #             kwargs={'host':'0.0.0.0', 'port':config.settings.port, 'threaded':'True', 'ssl_context':('certs/snakeoil.cert', 'certs/snakeoil.key')}
 #         ).start()
+     threading.Thread(
+          target=modelLoop,
+          args={config}
+     ).start()
 
-    next_run = datetime.datetime.now()
+  
+        
+ def modelLoop(self,config):  
+      next_run = datetime.datetime.now()
     while True:
         if datetime.datetime.now() < next_run:
             time.sleep(0.1)
