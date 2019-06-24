@@ -130,7 +130,12 @@ def thumbnail(uid):
 @app.route('/manage')
 def manage_file():
     files_list = os.listdir("/app/captures")
-    return render_template('manage.html', files_list=files_list)
+    list = [] 
+    for name in files_list
+        size = os.stat("/app/captures"+name).st_size
+        list.append({"name":name,"size":size})
+    
+    return render_template('manage.html', files_list=list)
 
 @app.route('/down/<filename>', methods=['GET', 'POST'])
 def download(filename):
