@@ -42,6 +42,7 @@ if __name__ == 'mfcrecorder':
           target=modelLoop,
           args=[config]
       ).start()
+    file = open("/tmp/app-initialized",'w')
 
   
 
