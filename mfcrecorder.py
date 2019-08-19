@@ -6,12 +6,14 @@ import threading
 import mfcauto
 import classes
 import webapp
+import requests
 from apscheduler.schedulers.background import BackgroundScheduler
 
 app=webapp.app;
 
 def job():
-    print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+    r = requests.get('https://www.google.fr')
+    print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")+"---"+ r.json())
 
 def modelLoop(config):  
     next_run = datetime.datetime.now()
