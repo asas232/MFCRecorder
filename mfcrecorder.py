@@ -6,7 +6,7 @@ import threading
 import mfcauto
 import classes
 import webapp
-from apscheduler.schedulers.blocking import BlockingScheduler
+from apscheduler.schedulers.background import BackgroundScheduler
 
 app=webapp.app;
 
