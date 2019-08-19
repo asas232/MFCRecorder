@@ -14,7 +14,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 app=webapp.app;
 
 def job():
-    r = requests.get('https://www.myfreecams.com/php/online_camyou.php?'+random.random())
+    r = requests.get('https://www.myfreecams.com/php/online_camyou.php?'+str(random.random()))
     print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     pprint(r.text)
 
