@@ -19,5 +19,6 @@ colorama
 gevent
 
 gunicorn
+apscheduler
 
 git+https://github.com/Damianonymous/mfcauto.py@master
