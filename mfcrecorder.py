@@ -6,8 +6,12 @@ import threading
 import mfcauto
 import classes
 import webapp
+from apscheduler.schedulers.blocking import BlockingScheduler
 
 app=webapp.app;
+
+def job():
+    print(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
 
 def modelLoop(config):  
     next_run = datetime.datetime.now()
@@ -42,7 +46,11 @@ if __name__ == 'mfcrecorder':
           target=modelLoop,
           args=[config]
       ).start()
+    scheduler = BackgroundScheduler()
+    scheduler.add_job(job, 'cron', minute = '*/1')
+    scheduler.start()
     file = open("/tmp/app-initialized",'w')
+    
 
   
 
