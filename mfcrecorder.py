@@ -15,7 +15,7 @@ app=webapp.app;
 def job():
     r = requests.get('https://www.google.fr')
     print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-    pprint(r.read().decode())
+    pprint(r.text)
 
 def modelLoop(config):  
     next_run = datetime.datetime.now()
