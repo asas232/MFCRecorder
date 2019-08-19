@@ -11,7 +11,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 app=webapp.app;
 
 def job():
-    print(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+    print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
 
 def modelLoop(config):  
     next_run = datetime.datetime.now()
