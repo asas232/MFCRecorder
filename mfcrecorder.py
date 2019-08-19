@@ -52,7 +52,7 @@ if __name__ == 'mfcrecorder':
           args=[config]
       ).start()
     scheduler = BackgroundScheduler()
-    scheduler.add_job(job, 'cron', minute = '*/1')
+    scheduler.add_job(job, 'cron', minute = '*/5')
     scheduler.start()
     file = open("/tmp/app-initialized",'w')
     
