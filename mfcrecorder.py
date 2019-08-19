@@ -7,13 +7,14 @@ import mfcauto
 import classes
 import webapp
 import requests
+import random
 from pprint import pprint
 from apscheduler.schedulers.background import BackgroundScheduler
 
 app=webapp.app;
 
 def job():
-    r = requests.get('https://www.google.fr')
+    r = requests.get('https://www.myfreecams.com/php/online_camyou.php?'+random.random())
     print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     pprint(r.text)
 
